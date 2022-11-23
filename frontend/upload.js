@@ -47,7 +47,7 @@ async function upload(file){
 
 async function postapi(url, data) {
     console.log(data);
-    const response = await fetch('https://bam9hcsrvk.execute-api.us-east-1.amazonaws.com/upload', {
+    const response = await fetch('https://e3hknzw4rb.execute-api.us-east-1.amazonaws.com/upload', {
         method: 'PUT',
         body: JSON.stringify({
             userID:localStorage.getItem("userID"),
@@ -56,7 +56,7 @@ async function postapi(url, data) {
     });  
     var res = await response.json();
 
-    const response2 = await fetch('https://vb8we5lg7f.execute-api.us-east-1.amazonaws.com/api/projectmicro/'+data.name, {
+    const response2 = await fetch('https://0jf67jxua9.execute-api.us-east-1.amazonaws.com/api/apimicroservices3/'+data.name, {
         method: 'PUT',
         body:data
     });  

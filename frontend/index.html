@@ -17,7 +17,7 @@
   <script>
     window.onload = function () {
       google.accounts.id.initialize({
-        client_id: '1097843974353-a4k9tahjqbph2idcl0sh0uepupeeheas.apps.googleusercontent.com',
+        client_id: '611814218572-gmuu9dtb6cii99dp3642nnaufo59ucrs.apps.googleusercontent.com',
         callback: handleCredentialResponse,
         context: 'use',
         prompt_parent_id: 'g_id_signin',
@@ -37,13 +37,13 @@
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function () {
           console.log('Signed in as: ' + xhr.responseText);
-          fetch("https://bam9hcsrvk.execute-api.us-east-1.amazonaws.com/users", {
+          fetch("https://e3hknzw4rb.execute-api.us-east-1.amazonaws.com/users", {
             method: 'PUT',
-            body: JSON.stringify({ "userID": JSON.parse(xhr.responseText).email, "data": JSON.parse(xhr.responseText) })
+            body: JSON.stringify({ "userId": JSON.parse(xhr.responseText).email, "data": JSON.parse(xhr.responseText) })
           })
             .then(response => response.json())
             .then(data => {
-              localStorage.setItem("userID", JSON.parse(xhr.responseText).email)
+              localStorage.setItem("userId", JSON.parse(xhr.responseText).email)
               window.location.href = "./upload.html";
             })
             .catch((error) => {
