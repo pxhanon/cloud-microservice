@@ -50,7 +50,7 @@ async function postapi(url, data) {
     const response = await fetch('https://e3hknzw4rb.execute-api.us-east-1.amazonaws.com/upload', {
         method: 'PUT',
         body: JSON.stringify({
-            userID:localStorage.getItem("userID"),
+            userId:localStorage.getItem("userId"),
             name:data.name
         }),
     });  
